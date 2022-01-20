@@ -1,12 +1,34 @@
 import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
 import Habits from "./components/habits";
+import * as Font from "expo-font";
+//import { AppLoading } from "expo";, this doesnt exist anymore
+import AppLoading from "expo-app-loading";
+
+const getFonts = () => {
+  return Font.loadAsync({
+    mochiyBold: require("./fonts/MochiyPopPOne-Regular.ttf"),
+  });
+};
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Habits />
-    </View>
-  );
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  if (fontsLoaded) {
+    return (
+      <View style={styles.container}>
+        <Habits />
+      </View>
+    );
+  } else {
+    return (
+      <AppLoading
+        startAsync={getFonts}
+        onFinish={() => setFontsLoaded(true)}
+        onError={(err) => console.log(err)}
+      />
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -23,4 +45,6 @@ const styles = StyleSheet.create({
 @react-navigatin/stack 
 expo install react-native-gesture-handler 
 yarn add react-native-uuid
+yarn add expo-font
+expo install expo-app-loading
 */
