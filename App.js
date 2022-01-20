@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import Habits from "./components/habits";
 import * as Font from "expo-font";
@@ -16,9 +16,12 @@ export default function App() {
 
   if (fontsLoaded) {
     return (
-      <View style={styles.container}>
+      <ImageBackground
+        source={require("./images/backGround.jpg")}
+        style={styles.container}
+      >
         <Habits />
-      </View>
+      </ImageBackground>
     );
   } else {
     return (

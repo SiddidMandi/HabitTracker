@@ -12,13 +12,15 @@ export default function MiniCard(props) {
 const styles = StyleSheet.create({
   miniCard: {
     padding: 5,
+    marginTop: 10,
     flexDirection: "row",
     borderRadius: 6,
-    elevation: 3,
-    backgroundColor: "#a0216a",
+    elevation: 15,
+    backgroundColor: "#9d31f6",
     marginVertical: 6,
     marginHorizontal: 1,
     width: 70,
+    opacity: 1,
   },
   miniCardContent: {
     flexDirection: "row",

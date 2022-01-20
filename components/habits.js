@@ -112,13 +112,14 @@ const styles = StyleSheet.create({
   },
   habitText: {
     fontSize: 13,
-    color: "#a2fddb",
+    color: "#fbff6a",
   },
   miniCardView: {
     flexDirection: "row",
   },
   dateText: {
-    color: "#a0216a",
+    color: "#0f5b9d",
     flexDirection: "column",
+    fontFamily: "mochiyBold",
   },
 });
